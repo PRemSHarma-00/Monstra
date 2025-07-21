@@ -13,12 +13,15 @@ function App() {
   const handleStartBattle = () => {
     setScreen('battle');
   };
+  const handleBattleEnd = () =>{
+    setScreen('menu');
+  }
 
   return (
     <>
       {screen === 'intro' && <IntroScreen onContinue={handleContinue} />}
       {screen === 'menu' && <MainMenu onStartBattle={handleStartBattle} />}
-      {screen === 'battle' && <BattleScreen />}
+      {screen === 'battle' && <BattleScreen onBattleEnd={handleBattleEnd} />}
     </>
   );
 }
