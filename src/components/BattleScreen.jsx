@@ -215,14 +215,14 @@ const BattleScreen = () => {
           <div className="w-40 h-3 bg-gray-700 rounded-full overflow-hidden mt-1">
             <div
               className="h-full bg-green-400 rounded-full transition-all duration-300"
-              style={{ width: `${(enemy.hp / 100) * 100}%` }}
+              style={{ width: `${(enemy.hp / enemy.maxHp) * 100}%` }}
             />
           </div>
         </div>
         <img
           src={enemy.sprite.front}
           alt={enemy.name}
-          className="h-38 max-w-[10%] object-contain"
+          className="h-38 max-w-[30%] object-contain"
         />
       </div>
 
@@ -238,7 +238,7 @@ const BattleScreen = () => {
           <div className="w-40 h-3 bg-gray-700 rounded-full overflow-hidden mt-1">
             <div
               className="h-full bg-green-400 rounded-full transition-all duration-300 ease-out"
-              style={{ width: `${(player.hp / 100) * 100}%` }}
+              style={{ width: `${(player.hp / player.maxHp) * 100}%` }}
             />
           </div>
         </div>
