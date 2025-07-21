@@ -97,7 +97,7 @@ const BattleScreen = ({onBattleEnd}) => {
         <img
           src={enemy.sprite.front}
           alt={enemy.name}
-          className="h-38 max-w-[30%] object-contain"
+          className="h-38 max-w-[20%] md:max-w-[10%] object-contain"
         />
       </div>
 
