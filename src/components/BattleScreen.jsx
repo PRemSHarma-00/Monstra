@@ -139,12 +139,12 @@ const BattleScreen = ({onBattleEnd}) => {
         ))}
       </div>) :(
         <div className="mt-12 flex-col items-center gap-4">
-          <h2 className='text-2xl font-bold text-center'>
+          <h2 className='text-2xl font-mono text-center'>
             {didWin?"Get some training before thinking of fighting again":"I'll be back stronger"}
           </h2>
           <button 
           onClick={onBattleEnd}
-          className='bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-xl'>
+          className='bg-blue-600 hover:bg-blue-700 text-white font-mono py-2 px-6 rounded-xl'>
             Return to Main Menu
           </button>
         </div>
