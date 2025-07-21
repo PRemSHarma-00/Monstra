@@ -144,7 +144,7 @@ const BattleScreen = ({onBattleEnd}) => {
           </h2>
           <button 
           onClick={onBattleEnd}
-          className='bg-blue-600 hover:bg-blue-700 text-white font-mono py-2 px-6 rounded-xl'>
+          className='bg-blue-600 justify-center hover:bg-blue-700 text-white font-mono py-2 px-6 rounded-xl'>
             Return to Main Menu
           </button>
         </div>
