@@ -1,3 +1,53 @@
+/* @import MUST come before @tailwind directives — PostCSS requirement */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Press+Start+2P&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Lato', sans-serif;
+    background-color: #080c14;
+    color: #e2e8f0;
+    overflow: hidden;
+  }
+}
+
+@layer utilities {
+  /* Only used for the game logo/title — nowhere else */
+  .font-pixel {
+    font-family: 'Press Start 2P', monospace;
+  }
+}
+
+/* ── Animations ──────────────────────────────────────────────────────────── */
+
+@keyframes loadingBar {
+  0%   { width: 0%; }
+  100% { width: 100%; }
+}
+
+@keyframes typewriterBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(16px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes msgSlideUp {
+  from { transform: translateY(10px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.animate-loadingBar { animation: loadingBar 2s ease-in-out infinite; }
+.animate-fadeInUp   { animation: fadeInUp  0.35s ease-out forwards;  }
+.animate-msgSlideUp { animation: msgSlideUp 0.22s ease-out forwards; }
+
+.cursor-blink::after {
+  content: '|';
+  animation: typewriterBlink 0.8s step-end infinite;
+}

@@ -1,33 +1,25 @@
 import { useState } from 'react';
-import IntroScreen from './components/IntroScreen';
-import MainMenu from './components/MainMenu';
+import IntroScreen  from './components/IntroScreen';
+import MainMenu     from './components/MainMenu';
 import BattleScreen from './components/BattleScreen';
+import LoreScreen   from './components/LoreScreen';
 
 function App() {
   const [screen, setScreen] = useState('intro');
 
-  const handleContinue = () => {
-    setScreen('menu');
-  };
-
-  const handleStartBattle = () => {
-    setScreen('battle');
-  };
-  const handleBattleEnd = () =>{
-    setScreen('menu');
-  }
-
   return (
     <>
-      {screen === 'intro' && <IntroScreen onContinue={handleContinue} />}
-      {screen === 'menu' && <MainMenu onStartBattle={handleStartBattle} />}
-      {screen === 'battle' && <BattleScreen onBattleEnd={handleBattleEnd} />}
+      {screen === 'intro'  && <IntroScreen  onContinue={() => setScreen('menu')} />}
+      {screen === 'menu'   && (
+        <MainMenu
+          onStartBattle={() => setScreen('battle')}
+          onLore={() => setScreen('lore')}
+        />
+      )}
+      {screen === 'battle' && <BattleScreen onBattleEnd={() => setScreen('menu')} />}
+      {screen === 'lore'   && <LoreScreen   onBack={() => setScreen('menu')} />}
     </>
   );
 }
 
 export default App;
-
-
-
-
